@@ -1,0 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
+import java.lang.Integer;
+
+void eval() 
+{
+	logger.debug("BSH file is running... " );
+	logger.debug("Your message is: " + message);
+	
+	outputMap.put("secret message", "Hellooooo");
+	
+}
+
+
