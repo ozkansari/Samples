@@ -18,15 +18,15 @@ public class StreamAndFlatMapFor2DimArraysSample {
 		String[][] array2dim = new String[][]{{"a", "b"}, {"c", "d"}, {"e", "f"}};
 		
 		System.out.println("normalWay: ");
-		normalWayArray2Dim(array2dim);
+		normalWay(array2dim);
 		System.out.println();
 				
-		System.out.println("java8Way 1: ");
-		java8Array2Dim(array2dim);
+		System.out.println("java8Way: ");
+		java8Way(array2dim);
 		System.out.println();
 	}
 
-	private static void normalWayArray2Dim(String[][] array2dim) {
+	private static void normalWay(String[][] array2dim) {
 		
 		info(" Convert 2dim array to 1 dim array : ");
 		List<String[]> array1dim = Arrays.asList(array2dim);
@@ -55,7 +55,7 @@ public class StreamAndFlatMapFor2DimArraysSample {
 	 * 
 	 * @param args
 	 */
-	private static void java8Array2Dim(String[][] array2dim) {
+	private static void java8Way(String[][] array2dim) {
 		
 		info(" Convert 2dim array to 1 dim array : ");
 		info(" > Arrays.stream(array2dim).forEach(System.out::print) : ");
