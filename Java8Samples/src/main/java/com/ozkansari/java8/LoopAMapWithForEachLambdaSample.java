@@ -7,7 +7,7 @@ import java.util.Map;
  * In Java 8, you can loop a Map with forEach and lambda expression.
  * 
  */
-public class LoopAMapWithForEachLambda {
+public class LoopAMapWithForEachLambdaSample {
 
 	public static void main(String [] args) {
 		

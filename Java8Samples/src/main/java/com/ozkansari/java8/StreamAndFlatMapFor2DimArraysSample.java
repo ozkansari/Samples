@@ -8,7 +8,7 @@ import java.util.stream.Stream;
  * https://www.mkyong.com/java8/java-8-flatmap-example/
  * 
  */
-public class StreamAndFlatMapFor2DimArrays {
+public class StreamAndFlatMapFor2DimArraysSample {
 
 	public static void main(String[] args) {
 		
