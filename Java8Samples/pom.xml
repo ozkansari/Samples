@@ -6,4 +6,6 @@
   <properties>
   	<author>ozkansari</author>
   </properties>
+  <name>Java 8 Samples</name>
+  <description>Examples are derived from mk yong's work</description>
 </project>
