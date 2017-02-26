@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public final class SolutionHelper {
 	
-	private static DebugMode DEBUG_MODE = DebugMode.NO_DEBUG;
+	private static DebugMode DEBUG_MODE = DebugMode.DEBUG_WITH_RANDOM_INPUT;
 	
 	private static Scanner in = null;
 	
@@ -78,10 +78,12 @@ public final class SolutionHelper {
 			
 			// Random
 			if(DEBUG_MODE.isRandomInput()) {
-				int n = 100000, m = 99999;
+				int n = 50, m = 20;
 				Random gen = new Random();
 				StringBuilder sb = new StringBuilder();
-				// TODO
+				for (int i = 0; i < n; i++) {
+					sb.append(gen.nextInt(m) + " ");
+				}
 				in = new Scanner(new ByteArrayInputStream(sb.toString().getBytes()));
 			}
 
