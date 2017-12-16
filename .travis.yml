@@ -1,6 +1,6 @@
 language: java
 sudo: false # false for faster builds
-script: "mvn -f MatematikUygulamasi/pom.xml -Dmaven.javadoc.skip=false clean install cobertura:cobertura checkstyle:checkstyle pmd:pmd javadoc:javadoc javadoc:aggregate site"
+script: "mvn -f SimpleBSHCall/pom.xml -Dmaven.javadoc.skip=false clean install cobertura:cobertura checkstyle:checkstyle pmd:pmd javadoc:javadoc javadoc:aggregate site"
 jdk:
   - oraclejdk8
 after_success:
