@@ -8,7 +8,7 @@ import java.io.*;
 public class UserBuilderSample {
     public static void main(String[] args) {
         User u = User.builder().firstName("Jane").lastName("Doe").age(99);
-        System.out.println("..." + u);
+        System.out.println("User: " + u);
     }
 }
 // Partial function application and the Builder pattern to construct a User instance
@@ -28,7 +28,7 @@ class User {
     }
 
     public static FirstName builder() {
-        return firstName - > lastName - > age - > new User(firstName, lastName, age);
+        return firstName -> lastName -> age -> new User(firstName, lastName, age);
     }
     protected interface FirstName {
         LastName firstName(String firstName);
