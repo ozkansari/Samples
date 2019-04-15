@@ -22,7 +22,6 @@ public class CallDummyRestService {
 		
 		private static Thread t;
 		
-		@Override
 		public void run() {
 			
 			setPort(9090); // Spark will run on port 9090

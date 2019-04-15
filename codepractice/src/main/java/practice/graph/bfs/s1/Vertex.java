@@ -85,6 +85,4 @@ public class Vertex {
 		adjecentVertices.add(v);
 	}
 	
-	
-
 }
