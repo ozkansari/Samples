@@ -1,12 +1,14 @@
 package leetcode;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
+import leetcode.CheckArrayFormationThroughConcatenation.Solution;
+
 public class CheckArrayFormationThroughConcatenationTest {
 
-	private CheckArrayFormationThroughConcatenation fixture = new CheckArrayFormationThroughConcatenation();
+	private Solution fixture = new CheckArrayFormationThroughConcatenation.Solution2();
 
 	@Test
 	public void testCanFormArray1() {
