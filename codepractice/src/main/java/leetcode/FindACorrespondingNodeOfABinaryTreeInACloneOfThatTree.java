@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.LinkedList;
 
 public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
@@ -31,7 +33,7 @@ public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
 			
 			VisitingNode targetVisitingNode = searchPreOrderDfs(original, target);
 			
-			LinkedList<Boolean> pathStack = new LinkedList<Boolean>();
+			Deque<Boolean> pathStack = new LinkedList<>();
 			VisitingNode current = targetVisitingNode;
 			while (current.parent != null) {
 				pathStack.addLast(current.rightNode);
@@ -58,7 +60,7 @@ public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
 				return null;
 			}
 			
-			LinkedList<VisitingNode> stack = new LinkedList<VisitingNode>();
+			Deque<VisitingNode> stack = new LinkedList<>();
 		    VisitingNode current = new VisitingNode(root, null, null);
 		    stack.addLast(current);
 
@@ -97,6 +99,48 @@ public class FindACorrespondingNodeOfABinaryTreeInACloneOfThatTree {
 				this.rightNode = rightNode;
 			}
 		}
+	}
+	
+	/** Runtime: 8 ms, Memory Usage: 46.7 MB */
+	protected static class Solution2 implements Solution {
+
+		@Override
+		public TreeNode getTargetCopy(TreeNode original, TreeNode cloned, TreeNode target) {
+			
+			if (original == null) {
+				return null;
+			}
+			
+			Deque<TreeNode> stackForOriginal = new ArrayDeque<>();
+			stackForOriginal.addLast(original);
+			Deque<TreeNode> stackForCloned = new ArrayDeque<>();
+			stackForCloned.addLast(cloned);
+			
+			TreeNode currentOriginal = original;
+			TreeNode currentCloned = cloned;
+			
+			while(!stackForOriginal.isEmpty()) {
+				
+		        currentOriginal = stackForOriginal.removeLast();
+		        currentCloned = stackForCloned.removeLast();
+		        
+		        if(currentOriginal.equals(target)) {
+		        	return currentCloned;
+		        }
+		        
+		        if(currentOriginal.right != null) {
+		            stackForOriginal.addLast(currentOriginal.right);
+		            stackForCloned.addLast(currentCloned.right);
+		        }    
+		        if(currentOriginal.left != null) {
+		            stackForOriginal.addLast(currentOriginal.left);
+		            stackForCloned.addLast(currentCloned.left);
+		        }
+		    }
+		    
+		    return null;
+		}
+		
 	}
 	
 	/** Definition for a binary tree node */
