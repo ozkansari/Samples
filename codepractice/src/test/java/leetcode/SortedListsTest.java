@@ -4,18 +4,18 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import leetcode.MergeTwoSortedLists.ListNode;
+import leetcode.SortedLists.ListNode;
 
-public class MergeTwoSortedListsTest {
+public class SortedListsTest {
 
-	private MergeTwoSortedLists fixture = new MergeTwoSortedLists();
+	private SortedLists fixture = new SortedLists();
 	
 	@Test
 	public void testMergeTwoLists() {
 		
 		// Given
-		MergeTwoSortedLists.ListNode l1 = null;
-		MergeTwoSortedLists.ListNode l2 = new MergeTwoSortedLists.ListNode(1);
+		SortedLists.ListNode l1 = null;
+		SortedLists.ListNode l2 = new SortedLists.ListNode(1);
 		
 		// When
 		ListNode result = fixture.mergeTwoLists(l1, l2);

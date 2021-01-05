@@ -1,7 +1,51 @@
 package leetcode;
 
-public class MergeTwoSortedLists {
+public class SortedLists {
 
+	/** Runtime: 0 ms,  Memory Usage: 38 MB */
+	public ListNode deleteDuplicates(ListNode head) {
+		
+		ListNode refNode = new ListNode(-1, head);
+		
+		ListNode current = refNode;
+		
+		while(current.next != null) {
+			
+			ListNode controlNode = current.next;
+			
+			boolean duplicateFound = false;
+			
+			while(controlNode.next != null) {
+				
+				if(controlNode.next.val == controlNode.val) {
+					controlNode = controlNode.next;
+					duplicateFound = true;
+				} else {
+					if (duplicateFound) {
+						controlNode = controlNode.next;
+						duplicateFound = false;
+					} else {
+						break;
+					}
+					
+				}
+				
+			}
+			
+			if (duplicateFound) {
+				controlNode = null;
+				current.next = controlNode;
+				break;
+			}
+			
+			current.next = controlNode;
+			current = controlNode;
+			
+		}
+		
+		return refNode.next;
+    }
+	
 	// Runtime: 0 ms, Memory Usage: 38.4 MB
 	/**
 	 * Merge two sorted linked lists and return it as a sorted list. The list should
